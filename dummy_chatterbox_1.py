@@ -1,5 +1,5 @@
 
-def azureml_main(dataframe1 = None, dataframe2 = None):
+def nltk_main(dataframe1 = None, dataframe2 = None):
   # Import the nltk module
   import nltk
   
