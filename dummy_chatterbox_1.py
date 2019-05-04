@@ -1,15 +1,8 @@
 
 def nltk_main(dataframe1 = None, dataframe2 = None):
-  # Import the nltk module
   import nltk
-  
-  # Import the pandas package. Pandas package generally used for transform the data.
   import pandas as pd
-  
-  # Import the Numpy.  fundamental package for scientific computing with Python. use for powerful N-dimensional array object.
   import numpy as np
-  
-  # Regular expression package
   import re
   
   # Array for token list
@@ -18,19 +11,14 @@ def nltk_main(dataframe1 = None, dataframe2 = None):
   # download the punkt package used for sent_tokenize and word_tokenize
   nltk.download(info_or_id='punkt', download_dir='C:/users/client/nltk_data')
   
-  # download the stopword package used for removing the stop words
+  # stopword for removing the stop words
   nltk.download(info_or_id='stopwords', download_dir='C:/users/client/nltk_data')
   
-  # download the wordnet package used for lemmatization
+  # wordnet for lemmatization
   nltk.download(info_or_id='wordnet',download_dir='C:/users/client/nltk_data')
   
-  # Import stopwords
   from nltk.corpus import stopwords
-  
-  # import WordNetLemmatizer
   from nltk.stem import WordNetLemmatizer
-  
-  # Get the stopwords for english dictionary
   l_stopwords = stopwords.words('english')
   colnames = dataframe1.columns
   
@@ -56,3 +44,10 @@ def nltk_main(dataframe1 = None, dataframe2 = None):
   
   # return dataset. Note in azure python scrip module always accept dataset as input and also output also should be dataset.
   return [dataframe_output]
+
+df1 = pd.load_csv('/data/bots/chat/data_scrape_0001.csv')
+df2 = pd.load_csv('/data/bots/chat/out/data_simul_01.csv')
+
+%%time
+nltk_main(df1, df2)
+
