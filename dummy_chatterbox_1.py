@@ -45,9 +45,11 @@ def nltk_main(dataframe1 = None, dataframe2 = None):
   # return dataset. Note in azure python scrip module always accept dataset as input and also output also should be dataset.
   return [dataframe_output]
 
+# test load - simulated data.
 df1 = pd.load_csv('/data/bots/chat/data_scrape_0001.csv')
 df2 = pd.load_csv('/data/bots/chat/out/data_simul_01.csv')
 
+# try..
 %%time
 nltk_main(df1, df2)
 
